@@ -1,0 +1,29 @@
+\documentclass[10pt,a4paper,openright]{book}
+
+%% Formateo del título del documento
+\title{\Huge Resumen Grupos}
+\author{Mario Calvarro Marines}
+\date{}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{style}
+
+\begin{document}
+\frontmatter
+\maketitle
+\setcounter{tocdepth}{3}% para que salgan las subsubsecciones en el indice
+\tableofcontents
+
+
+\mainmatter
+\include{./tex/Generalidades}
+\include{./tex/SubgruposHomomorfismos}
+\include{./tex/Permutaciones}
+\include{./tex/Acciones}
+\include{./tex/Sylow}
+\include{./tex/AbelianosFinitos}
+\include{./tex/AbelianosFinitamenteGen}
+
+\end{document}
