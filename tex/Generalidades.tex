@@ -1,7 +1,7 @@
 \chapter{Generalidades sobre grupos.\\ Fórmula de Lagrange}
 \section{Grupos cíclicos y diedrales}
 
-\begin{defi}
+\begin{defi}[Grupo]
 Un conjunto $G$ y la operación $G \times G \rightarrow G, \left( a, b \right) \mapsto ab$ se dicen \textbf{grupo} si cumplen:
 \begin{itemize}
     \item \textit{Asociatividad}.
@@ -10,3 +10,131 @@ Un conjunto $G$ y la operación $G \times G \rightarrow G, \left( a, b \right) \
 \end{itemize}
 Si además es \textit{conmutativo}, se dice \textbf{abeliano}.
 \end{defi}
+
+\begin{prop}
+Sea $G$, grupo, y $g \in G \Rightarrow$
+\[
+\left\{ gx: x \in G \right\} = G = \left\{ xg : x \in G \right\}
+\]
+\end{prop}
+
+\begin{defi}[Subgrupo]
+Se dice que $H \subset G$ es un \textbf{subgrupo} de $G$ si:
+\begin{itemize}
+    \item $1_G \in H$
+    \item $a b^{-1} \in H,\ \forall a, b \in H$
+\end{itemize}
+\end{defi}
+
+\begin{defi}[Subgrupo generado por un subconjunto]
+Sea $G$, grupo, y $\emptyset \neq S \subset G$. Llamamos \textbf{subgrupo generado por} $S$ a:
+\[
+\langle S \rangle = \bigcap_{H \in \mathcal{H}_S} H
+\]
+donde $\mathcal{H}_S$ es la familia de los subgrupos de $G$ que contienen a $S$.
+
+Otra forma de expresarlo es:
+\[
+    \mathcal{W}\left( S \right) = \left\{ s_1^{n_1}, \ldots, s_k^{n_k} : s_i \in S\ \&\ n_j \in \mathbb{N} \right\}
+\]
+y diremos que un grupo es finitamente generado si $\exists S \subset G: \langle S \rangle = G$.
+\end{defi}
+
+\begin{prop}[Identidad de Bézout]
+Sean $m, n \in \mathbb{Z}\setminus \left\{ 0 \right\}$ y $d := \mcd \left( m, n \right)$. Entonces,
+\[
+\exists a, b \in \mathbb{Z} : d = am + bn
+\]
+\end{prop}
+
+\begin{defi}
+Sea $H \le G$
+\begin{itemize}
+\item Sea $a \in G$. Llamamos \textbf{conjugado} de $H$ vía $a$ a:
+\[
+H^a := a^{-1}Ha := \left\{ a^{-1}ha : h \in H \right\}
+\]
+Diremos que $H$ y $H^a$ son \textbf{conjugados}
+
+\item Llamamos \textbf{centralizador} de $H$ en $G$ a:
+\[
+C_G\left( H \right) := \left\{ a \in G: ah = ha\ \forall h \in H \right\}
+\]
+En particular, $\mathcal{Z}\left( G \right) := C_G\left( G \right)$ se denomina \textbf{centro} de $G$.
+\end{itemize}
+
+\begin{prop}
+Sea $G$ un grupo cíclico (generado por un solo elemento), entonces $H \le G$ es cíclico.
+\end{prop}
+\end{defi}
+
+\section{Fórmula de Lagrange}
+\begin{prop}
+Sean $H, K \le G$. Entonces,
+\[
+\ord\left( H \right)\ord\left( K \right) = \card(HK)\ord(H \cap K)
+\]
+En particular, $\card\left( HK \right) \le \ord\left( H \right) \ord\left( K \right)$
+\end{prop}
+
+\begin{defi}[Clases laterales]
+Sean $H \le G$.
+\begin{itemize}
+    \item Definimos la clase de equivalencia $\mathcal{R}_H$ tal que:
+    \[
+    a \mathcal{R}_H b \Leftrightarrow a b^{-1} \in H
+    \]
+    y decimos que $a$ y $b$ son \textbf{congruentes por la derecha}.
+    \[
+    Ha := \left\{ ha : h \in H \right\}
+    \]
+    \item Definimos la clase de equivalencia $\mathcal{R}^H$ tal que:
+    \[
+    a \mathcal{R}^H b \Leftrightarrow a^{-1}b \in H
+    \]
+    y decimos que $a$ y $b$ son \textbf{congruentes por la izquierda}.
+    \[
+    a H := \left\{ ah : h \in H \right\}
+    \]
+\end{itemize}
+Las clases de equivalencia definidas por estas relaciones tienen el mismo número de elementos que denominamos \textbf{índice} de $H$ en $G$, $\left[ G : H \right]$.
+\end{defi}
+
+\begin{coro}[Fórmula de Lagrange]
+Sea $G$ un grupo finito.
+\begin{itemize}
+\item $H \le G$, entonces:
+\[
+\ord \left( G \right) = \ord\left( H \right)\left[ G : H \right]
+\]
+\item Si $K \le G$ y $\mcd\left( \ord\left( H \right), \ord\left( K \right) \right) = 1$, entonces $H \cap K = \left\{ 1_G \right\}$.
+
+\item Si el orden de $G$ es un primo, entonces $G$ es cíclico y está generado por cualquiera de sus elementos distintos de $1_G$.
+\end{itemize}
+\end{coro}
+
+\begin{coro}[Pequeño teorema de Fermat]
+Dados un entero primo $p$ y $k \in \mathbb{Z}$ se cumple:
+\[
+k^p \equiv k \bmod p
+\]
+\end{coro}
+
+\begin{lema}
+Sea $G$ grupo y $a, b \in G$, elementos de orden $n, m$, entonces:
+\begin{itemize}
+    \item $\forall k \in \mathbb{Z}$, $o\left( a^k \right) = \frac{n}{\mcd\left( n,k \right)}$.
+    \item Si $ab = ba$ y $\mcd\left( m, n \right) = 1 \Rightarrow o\left( a b \right) = mn$.
+\end{itemize}
+\end{lema}
+
+\begin{prop}
+Sea $G$ un grupo cíclico finito. Para cada divisor $d > 0$ de $\ord\left( G \right),\ \exists! H \le G : \ord\left( H \right) = d$.
+\end{prop}
+
+\begin{prop}[Transitividad del índice]
+Sean $H, K \le G: H \subset K$ y $\left[ G : H \right]$ es finito. Entonces, también lo son $\left[ G: K \right]$ y $\left[ K : H \right]$ y 
+\[
+    \left[ G : H \right] = \left[ G : K \right] \cdot \left[ K : H \right]
+\]
+\end{prop}
