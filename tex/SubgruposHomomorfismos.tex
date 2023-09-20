@@ -1,0 +1,114 @@
+\chapter{Subgrupos normales y\\ homomorfismos}
+\section{Subgrupos normales}
+\begin{defi}
+Sean $H, K \le G$, tal que $H \subset K$.    
+\begin{itemize}
+    \item $H$ es \textbf{subgrupo normal} de $K$ si $Ha = aH, \forall a \in K \Leftrightarrow a^{-1}H a = H$. En notación, $H \triangleleft K$.
+
+    \item Denominamos \textbf{normalizador} de $H$ en $G$, $N_G\left( H \right)$, al subgrupo de $G$definido por:
+    \[
+    N_G\left( H \right) := \left\{ a \in G : Ha = aH \right\} = \left\{ a \in G : a^{-1} H a = H \right\}
+    \]
+    Por tanto, $C_G\left( H \right) \subset N_G\left( H \right)$
+
+    \item Un grupo será \textbf{simple} si sus únicos subgrupos normales son los triviales.
+\end{itemize}
+\end{defi}
+
+\begin{prop}
+\begin{itemize}
+    \item Sean $H \triangleleft G$ y $K \le G$, entonces $HK \le G$ y $H \triangleleft HK$.
+    \item Sean $H, K \triangleleft G$, entonces:
+    \begin{enumerate}
+        \item $HK \triangleleft G$.
+        \item $H \cap K \triangleleft G$. Si, además, $H \cap K = \left\{ 1_G \right\} \Rightarrow hk = kh,\ \forall k \in K, h \in H$.
+    \end{enumerate}
+
+    \item Sea $a \in G$ una involución, entonces $\langle a \rangle \triangleleft G \Leftrightarrow a \in \mathcal{Z}\left( G \right)$.
+
+    \item Sean $S$, generador, y $H \le G$ tales que, $s^{-1} H s = H,\ \forall s \in S$, entonces $H \triangleleft G$.
+
+    \item Sean $H \le G$ y $K \triangleleft G$ finito tal que $H \subset K$, entonces $H \triangleleft G$.
+\end{itemize}
+\end{prop}
+
+\begin{prop}[Indice del normalizador]
+    Sean $H \le G$ finito y $\Sigma := \left\{ a^{-1} H a : a \in G \right\}$. Entonces, $\card \left( \Sigma \right) = \left[ G : N_G\left( H \right) \right]$.
+\end{prop}
+
+\subsection{Grupo cociente}
+Sea $H \triangleleft G$ y utilizando la operación:
+\begin{align*}
+    G / H \times G / H &\rightarrow G / H\\
+    \left( Ha, Hb \right) &\mapsto Hab
+\end{align*}
+definimos un \textbf{grupo cociente}.
+
+\begin{theo}[de Correspondencia]
+Sean $H \triangleleft G$, $\Sigma_{H}\left( G \right) := \left\{ L \le G : H \subset L \right\}$ y $\Sigma\left( G/H \right) := \left\{ L \le G/H \right\}$. Entonces,
+\begin{align*}
+    \Sigma_H \left( G \right) &\rightarrow \Sigma\left( G/H \right)\\
+    K &\mapsto K/H
+\end{align*}
+es una biyección.
+\end{theo}
+
+\begin{lema}[Normalizador del cociente]
+Sean $H \le G$ y $K \triangleleft G : K \subset H$. Entonces,
+\[
+    N_G\left( H \right) / K = N_{G/K}\left( H/K \right)
+\]
+En particular, $H \triangleleft G \Leftrightarrow H/K \triangleleft G/K$.
+\end{lema}
+
+\section{Homomorfismos de grupos}
+\begin{defi}
+Dados $G_1, G_2$ y una aplicación $f: G_1 \rightarrow G_2$, se dice que es \textbf{homomorfismo} de grupos si $f\left( ab \right) = f\left( a \right)f\left( b \right)$.
+\end{defi}
+
+\begin{obs}
+\begin{itemize}
+    \item $\forall H_1 \le G$, $H_2 := f\left( H_1 \right) \le G_2$. En particular, $\img f := f\left( G_1 \right) \le G_2$ y si $H_1 \triangleleft G_1 \Rightarrow H_2 \triangleleft \img f$.
+    \item $\forall H_2 \le G_2$, $H_1 := f^{-1} H_2 \le G_1$. Además, $H_2 \triangleleft G_2 \Rightarrow H_1 \le G_1$.
+
+    En concreto, $\ker f \triangleleft G$.
+
+    \item $f$ es inyectivo $\Leftrightarrow \ker f = \left\{ 1_G \right\}$.
+
+    \item La composición de homomorfismos es homomorfismo.
+        
+    \item Llamamos \textbf{isomorfismo} a $f$ homomorfismo biyectivo tal que $f^{-1}$ también es homomorfismo. En tal caso, diremos que $G_1 \simeq G_2$ son isomorfos.
+\end{itemize}
+\end{obs}
+
+\begin{ej}
+\begin{itemize}
+    \item Sea $f: G \rightarrow G$ isomorfismo. Lo llamaremos \textbf{automorfismo} y el conjunto $\mathrm{Aut}\left( G \right)$ con la operación $f \cdot g = g \circ f$ forma un subgrupo de $\mathrm{Biy\left( G \right)}$.
+
+    \item Dados $H \le G$ y $a \in N_G\left( H \right)$ las aplicaciones:
+    \begin{align*}
+        f_a : H &\rightarrow H\\
+        x \mapsto a^{-1} x a
+    \end{align*}
+    forman el grupo $\mathrm{Int}_G\left( H \right)$, \textbf{automorfismos internos} de $H$, que es un subgrupo de $\mathrm{Aut}\left( G \right)$.
+\end{itemize}
+\end{ej}
+
+\subsection{Teoremas de isomorfía}
+\begin{theo}[Primer teorema de isomorfía]
+Dado $f: G_1 \rightarrow G_2$ homomorfismo, la aplicación:
+\begin{align*}
+    \hat{f}: G_1 / \ker f &\rightarrow \img f\\
+    a \ker f &\mapsto f\left( a \right)
+\end{align*}
+es un isomorfismo.
+\end{theo}
+
+\begin{coro}
+\begin{itemize}
+\item Sea $f: G_1 \rightarrow G_2$ homomorfismo sobreyectivo y $H \triangleleft G$. Entonces, $G_1 / f^{-1} \left( H \right) \simeq G_2 / H$.
+
+\item Sea $H \le G$, entonces $N_G\left( H \right) / C_G\left( H \right) \simeq \mathrm{Int}_G\left( H \right)$. En particular, $G/\mathcal{Z}\left( G \right) \simeq \mathrm{Int}\left( G \right)$.
+\end{itemize}
+\end{coro}
+
