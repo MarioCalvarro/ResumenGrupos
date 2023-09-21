@@ -1,0 +1,91 @@
+\chapter{Grupos de permutaciones}
+\section{Generalidades}
+\subsection{Grupo simétrico}
+Siendo $n \in \mathbb{N}$, denotamos $I_n := \left\{ x \in \mathbb{Z} : 1 \le x \le n \right\}$ y $\mathcal{S}_n$ al conjunto de biyecciones de $I_n$ en si mismo, que tiene $\card\left( \mathcal{S}_n \right) = n!$. Forma el llamado \textbf{grupo de permutaciones} con la composición ``al revés''.
+\begin{align*}
+    \sigma \cdot \tau := \sigma \tau : I_n &\rightarrow I_n\\
+    j &\mapsto \tau\left( \sigma \left( j \right) \right)
+\end{align*}
+
+\begin{theo}[de Cayley]
+Todo grupo $G$ es isomorfo a un subgrupo de $\mathrm{Biy}\left( G \right)$. En particular, 
+todo grupo finito es isomorfo a un subgrupo del grupo de permutaciones.
+\end{theo}
+
+\begin{defi}[Soporte]
+Llamamos \textbf{soporte} de una permutación $\sigma \in \mathcal{S}_n$ al conjunto:
+\[
+\mathrm{sop}\left( \sigma \right) := \left\{ j \in I_n: \sigma\left( j \right) \neq j \right\}
+\]
+y decimos que dos permutaciones son \textbf{disjuntas} si lo son sus soportes.
+\end{defi}
+
+\begin{prop}
+\begin{itemize}
+    \item Sea $j \in \mathrm{sop}\left( j \right)$, entonces $\sigma\left( j \right) \in \mathrm{sop}\left( j \right)$.
+    \item Dos permutaciones disjuntas conmutan.
+\end{itemize}
+\end{prop}
+
+\begin{defi}[Ciclos]
+Una permutación $\sigma \in \mathcal{S}_n$ se denomina \textbf{ciclo de longitud} $k$ si $\exists i_1, \ldots, i_k \in I_n$ tales que $\mathrm{sop}\left( \sigma \right) = \left\{ i_1, \ldots, i_k \right\}$ y
+\[
+    \sigma\left( i_1 \right) = i_2,\ \sigma\left( i_2 \right) = i_3, \ldots, \sigma\left( i_{k-1} \right) = i_k\ \& \sigma\left( i_k \right) = i_1
+\]
+Si es de longitud $2$ lo denominaremos como \textbf{transposición}.
+\end{defi}
+
+\begin{prop}
+\begin{itemize}
+    \item Toda permutación es composición de ciclos disjuntos y esta factorización es única salvo el orden de los factores.
+    \item Si $\sigma_1, \ldots, \sigma_r$ son ciclos disjuntos y $\mathrm{long}\left( \sigma_i \right) \le \mathrm{long}\left( \sigma_{r+1} \right),\ \forall 1 \le i \le r-1$, se llama \textbf{estructura cíclica} de $\sigma := \sigma_1 \cdots \sigma_r$ a la $r$-tupla $\left( \mathrm{long}\left( \sigma_1 \right), \ldots, \mathrm{long}\left( \sigma_r \right) \right)$.
+\end{itemize}
+\end{prop}
+
+\begin{lema}
+Siendo $\sigma, \tau \in \mathcal{S}_n$ disjuntas tal que $o\left( \sigma \right) = \ell$ y $o\left( \tau \right) = m$, entonces $o\left( \sigma \tau \right) = \mcm\left( \ell, m \right)$
+\end{lema}
+
+\begin{coro}
+Sea $\sigma := \sigma_1 \cdots \sigma_k$ una factorización en ciclos de la permutación. Entonces,
+\[
+o\left( \sigma \right) = \mcm\left( \mathrm{long}\left( \sigma_1 \right), \ldots, \mathrm{long}\left( \sigma_k \right) \right)
+\]
+\end{coro}
+
+\begin{defi}[Índice]
+\begin{itemize}
+\item $\forall \sigma \in \mathcal{S}_n$ consideramos el endomorfismo, $f_{\sigma} : \mathbb{R}^n \rightarrow \mathbb{R}^n$ que cumple que $f_{\sigma}\left( e_j \right) = e_{\sigma^{-1}\left( j \right)}$. Entonces,
+\begin{align*}
+    \psi: \mathcal{S}_n &\rightarrow \mathrm{Aut}\left( \mathbb{R}^n \right)\\
+    \sigma &\mapsto f_{\sigma}
+\end{align*}
+es homomorfismo de grupos.
+
+La matriz de $f_{\sigma}$ proviene de desordenar las columnas de la identidad, por tanto, $\det \left( f_{\sigma} \right) \in \left\{ 1, -1 \right\}$. Definimos, pues, el homomorfismo \textbf{índice}:
+\[
+    \varepsilon := \mathrm{det} \circ \psi: \mathcal{S}_n \rightarrow \mathcal{U}_2
+\]
+
+\item Al kernel de $\varepsilon$ se le denota $\mathcal{A}_n$, \textbf{$\mathbf{n}$-ésimo grupo alternado}. Si $\sigma \in \mathcal{A}_n$ se dice \textbf{par} y en caso contrario \textbf{impar}.
+\end{itemize} 
+\end{defi}
+
+\begin{lema}
+Las transposiciones constituyen un sistema generador de $\mathcal{S}_n$.
+\end{lema}
+
+\begin{prop}
+El ciclo $\sigma := \left( a_1, \ldots, a_k \right) \in \mathcal{S}_n \in \mathcal{A}_n \Leftrightarrow k$ impar.
+\end{prop}
+
+\begin{prop}[Sistemas generadores de $\mathcal{S}_n$ y $\mathcal{A}_n$]
+\begin{itemize}
+\item $\mathcal{S}_n$ es generado por $\left\{ \alpha_i := \left( 1, i \right): 2 \le i \le n \right\}$.
+\item $\mathcal{S}_n$ es generado por $\left\{ \tau_i := \left( i, i+1 \right) : 1 \le i \le n-1 \right\}$.
+\item $\mathcal{S}_n$ es generado por $\left( 1, 2 \right)$ y $\left( 1, \ldots, n \right)$.
+\item $\mathcal{A}_n$ es generado por $\left\{ \sigma_i := \left( 1, 2, i \right) : 3 \le i \le n \right\}$.
+\end{itemize} 
+\end{prop}
+
+\subsection{Clases de conjugación en $\mathcal{S}_n$}
