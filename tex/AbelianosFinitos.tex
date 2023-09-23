@@ -1,0 +1,24 @@
+\chapter{Grupos abelianos finitos. Función\\ de Euler}
+\section{Teorema de estructura de los grupos abelianos finitos.}
+\begin{defi}[Exponente]
+El \textbf{exponente} de un grupo finito $G$, denotado $e\left( G \right)$, es el menor entero $k > 0$ tal que $g^k = 1_G,\ \forall g \in G$.
+\end{defi}
+
+\begin{prop}
+\begin{itemize}
+\item $e\left( G \right)$ es el mínimo común múltiplo de los órdenes de los elementos de $G$. En particular, $e\left( G \right) \mid \ord\left( G \right)$.
+\item Si $G$ es abeliano $e\left( G \right)$ es el máximo de los órdenes de los elementos de $G$.
+\end{itemize}
+\end{prop}
+
+\begin{theo}[Teorema de estructura]
+    Sea $G$, grupo abeliano finito. Entonces, $\exists m_1, \ldots, m_r \in \mathbb{Z}$ tales que $m_i \mid m_{i-1},\ \forall 2 \le i \le r$ y $G \simeq \mathbb{Z}_{m_1} \times \ldots \times \mathbb{Z}_{m_r}$. Además, $r, m_1, \ldots, m_r$ son únicos con estas condiciones.
+\end{theo}
+
+\begin{defi}
+Los anteriores $m_1, \ldots, m_r$ se denominan \textbf{coeficientes de torsión} de $G$.
+\end{defi}
+
+\begin{prop}[Grupos abelianos de orden dado]
+Sean $n, m > 1$ enteros tal que $\mcd \left( n, m \right) = 1$. Entonces, todo grupo abeliano $G$ de orden $mn$ es isomorfo a $H \times K$, donde $H$ y $K$son grupos abelianos de órdenes $m$ y $n$.
+\end{prop}
