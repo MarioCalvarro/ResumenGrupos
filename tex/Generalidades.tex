@@ -37,7 +37,7 @@ Otra forma de expresarlo es:
 \[
     \mathcal{W}\left( S \right) = \left\{ s_1^{n_1}, \ldots, s_k^{n_k} : s_i \in S\ \&\ n_j \in \mathbb{N} \right\}
 \]
-y diremos que un grupo es finitamente generado si $\exists S \subset G: \langle S \rangle = G$.
+y diremos que un grupo es finitamente generado si $\exists S \subset G: \langle S \rangle = G$, donde $S$ es finito.
 \end{defi}
 
 \begin{prop}[Identidad de Bézout]
@@ -50,7 +50,7 @@ Sean $m, n \in \mathbb{Z}\setminus \left\{ 0 \right\}$ y $d := \mcd \left( m, n 
 \begin{defi}
 Sea $H \le G$
 \begin{itemize}
-\item Sea $a \in G$. Llamamos \textbf{conjugado} de $H$ vía $a$ a:
+\item Sea $a \in G$. El llamado \textbf{conjugado} de $H$ vía $a$ es:
 \[
 H^a := a^{-1}Ha := \left\{ a^{-1}ha : h \in H \right\}
 \]
@@ -62,11 +62,11 @@ C_G\left( H \right) := \left\{ a \in G: ah = ha\ \forall h \in H \right\}
 \]
 En particular, $\mathcal{Z}\left( G \right) := C_G\left( G \right)$ se denomina \textbf{centro} de $G$.
 \end{itemize}
+\end{defi}
 
 \begin{prop}
 Sea $G$ un grupo cíclico (generado por un solo elemento), entonces $H \le G$ es cíclico.
 \end{prop}
-\end{defi}
 
 \section{Fórmula de Lagrange}
 \begin{prop}
