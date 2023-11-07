@@ -1,61 +1,61 @@
-\chapter{Acción de un grupo\\ sobre un conjunto}
+\chapter{Acción de un grupo\texorpdfstring{\\}{} sobre un conjunto}
 \section{Ecuación de clases}
 \subsection{Acciones, órbitas y estabilizadores}
+    \begin{defi}
+    Denominamos \textbf{acción de un grupo} $G$ sobre un conjunto $X \neq \emptyset$ a cualquier homomorfismo:
+    \begin{align*}
+        G &\rightarrow \mathrm{Biy}\left( X \right)\\ 
+        g &\mapsto \tilde{g}
+    \end{align*}
+    Esto define una relación de equivalencia tal que $x \sim y \Leftrightarrow \exists g \in G : y = \tilde{g}\left( x \right)$.
 
-\begin{defi}
-Denominamos \textbf{acción de un grupo} $G$ sobre un conjunto $X \neq \emptyset$ a cualquier homomorfismo:
-\begin{align*}
-    G &\rightarrow \mathrm{Biy}\left( X \right)\\ 
-    g &\mapsto \tilde{g}
-\end{align*}
-Esto define una relación de equivalencia tal que $x \sim y \Leftrightarrow \exists g \in G : y = \tilde{g}\left( x \right)$.
+    La clase de equivalencia definida así se denomina $\mathbf{G}$\textbf{-órbita} de $x$ bajo la acción de $G$, $O_{G, x} := \left\{ \tilde{g}\left( x \right) : g \in G \right\}$.
+    \end{defi}
+    \begin{obs}
+    $\left\{ O_x : x \in X \right\}$ particiona $X$ y, siendo $R \subset X$ un conjunto de representantes de las clases, se cumple $X = \bigsqcup_{x \in R} O_x$. Por tanto, $\card\left( X \right) = \sum_{x \in R} \card\left( O_x \right)$. 
+    \end{obs}
 
-La clase de equivalencia definida así se denomina $\mathbf{G}$\textbf{-órbita} de $x$ bajo la acción de $G$, $O_{G, x} := \left\{ \tilde{g}\left( x \right) : g \in G \right\}$.
-\end{defi}
-\begin{obs}
-$\left\{ O_x : x \in X \right\}$ particiona $X$ y, siendo $R \subset X$ un conjunto de representantes de las clases, se cumple $X = \bigsqcup_{x \in R} O_x$. Por tanto, $\card\left( X \right) = \sum_{x \in R} \card\left( O_x \right)$. 
-\end{obs}
-
-\begin{defi}
-Llamamos \textbf{estabilizador} de $x \in X$ bajo la acción de $G$ al subgrupo:
-\[
-\mathrm{Stab}_G \left( x \right) := \left\{ g \in G : \tilde{g}\left( x \right) = x \right\}
-\]
-\end{defi}
+    \begin{defi}
+    Llamamos \textbf{estabilizador} de $x \in X$ bajo la acción de $G$ al subgrupo:
+    \[
+    \mathrm{Stab}_G \left( x \right) := \left\{ g \in G : \tilde{g}\left( x \right) = x \right\}
+    \]
+    \end{defi}
 
 \subsection{Órbitas y estabilizadores}
-\begin{prop}[Cardinal de una órbita]
-Si $G$ actúa sobre $X$ y $x \in X$, se cumple $\card\left( O_x \right) = \left[ G : \mathrm{Stab}_G\left( x \right) \right]$.
-\end{prop}
+    \begin{prop}[Cardinal de una órbita]
+    Si $G$ actúa sobre $X$ y $x \in X$, se cumple $\card\left( O_x \right) = \left[ G : \mathrm{Stab}_G\left( x \right) \right]$.
+    \end{prop}
 
-\begin{coro}[Fórmula de las órbitas]
-Sea $R$ conjunto de representantes de las órbitas de $X$, finito, bajo la acción de $G$. Entonces,
-\[
-\card\left( X \right) = \sum_{x \in R} \left[ G : \mathrm{Stab}_G\left( x \right) \right] 
-\]
-\end{coro}
+    \begin{coro}[Fórmula de las órbitas]
+    Sea $R$ conjunto de representantes de las órbitas de $X$, finito, bajo la acción de $G$. Entonces,
+    \[
+    \card\left( X \right) = \sum_{x \in R} \left[ G : \mathrm{Stab}_G\left( x \right) \right] 
+    \]
+    \end{coro}
 
-\subsection{Aplicaciones a los $p$-grupos}
-\begin{defi}
-Llamamos $\mathbf{p}$\textbf{-grupo} a aquellos cuyo orden es potencia de un número primo $p$.
-\end{defi}
-\begin{lema}[Centro de un $p$-grupo]
-Sea $H \neq \left\{ 1_G \right\} \le G$, $p$-grupo. Entonces, $H \cap \mathcal{Z}\left( G \right) \neq \left\{ 1_G \right\}$. En particular, $\mathcal{Z}\left( G \right) \neq \left\{ 1_G \right\}$, por lo que $G$ no es simple salvo si $\ord\left( G \right) = p$.
-\end{lema}
+\subsection{Aplicaciones a los \texorpdfstring{$p$}{p}-grupos}
+    \begin{defi}
+        Llamamos $\mathbf{p}$\textbf{-grupo} a aquellos cuyo orden es potencia de un número primo $p$.
+    \end{defi}
 
-\begin{lema}[Criterio de abelianidad]
-\begin{itemize}
-\item Sean $p$, nº primo, $n \in \mathbb{N}$ y $G: \ord\left( G \right) = p^n$. Entonces, $\ord \left( \mathcal{Z}\left( G \right) \right) \neq p^{n-1}$. En particular, si $\ord\left( G \right) = p^3$, no abeliano, entonces $\ord\left( \mathcal{Z}\left( G \right) \right) = p$.
+    \begin{lema}[Centro de un $p$-grupo]
+        Sea $H \neq \left\{ 1_G \right\} \le G$, $p$-grupo. Entonces, $H \cap \mathcal{Z}\left( G \right) \neq \left\{ 1_G \right\}$. En particular, $\mathcal{Z}\left( G \right) \neq \left\{ 1_G \right\}$, por lo que $G$ no es simple salvo si $\ord\left( G \right) = p$.
+    \end{lema}
 
-\item Todo $G$ de orden $p^2$, es abeliano.
-\end{itemize} 
-\end{lema}
+    \begin{lema}[Criterio de abelianidad]
+        \begin{itemize}
+        \item Sean $p$, nº primo, $n \in \mathbb{N}$ y $G: \ord\left( G \right) = p^n$. Entonces, $\ord \left( \mathcal{Z}\left( G \right) \right) \neq p^{n-1}$. En particular, si $\ord\left( G \right) = p^3$, no abeliano, entonces $\ord\left( \mathcal{Z}\left( G \right) \right) = p$.
 
-\begin{lema}
-Sean $p$, nº primo, $G$ finito y $H \le G$ que es $p$-grupo. Entonces $\left[ G : H \right] \equiv \left[ N_G\left( H \right) : H \right] \bmod p$.
-\end{lema}
+        \item Todo $G$ de orden $p^2$, es abeliano.
+        \end{itemize} 
+    \end{lema}
+
+    \begin{lema}
+        Sean $p$, nº primo, $G$ finito y $H \le G$ que es $p$-grupo. Entonces $\left[ G : H \right] \equiv \left[ N_G\left( H \right) : H \right] \bmod p$.
+    \end{lema}
 
 \section{Teorema de Cauchy}
-\begin{theo}[de Cauchy]
-Sea $p$, nº primo, y $G$ grupo de orden múltiplo de $p$. Entonces, el nº de subgrupos de $G$ de orden $p$ es congruente con $1 \bmod p$. En particular, \underline{$\exists a \in G$ de orden $p$}. 
-\end{theo}
+    \begin{theo}[de Cauchy]
+        Sea $p$, nº primo, y $G$ grupo de orden múltiplo de $p$. Entonces, el nº de subgrupos de $G$ de orden $p$ es congruente con $1 \bmod p$. En particular, \underline{$\exists a \in G$ de orden $p$}. 
+    \end{theo}

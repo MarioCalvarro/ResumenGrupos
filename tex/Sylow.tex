@@ -1,44 +1,43 @@
-\chapter{Teoremas de Sylow. Grupos\\ resolubles}
-
+\chapter{Teoremas de Sylow. Grupos\texorpdfstring{\\}{} resolubles}
 \section{Teoremas de Sylow}
-\begin{theo}[Primer teorema de Sylow]
-Sean $p$, nº primo, y $G$, finito, cuyo orden es $\ord\left( G \right) := p^n m;\ m, n \in \mathbb{N}$ y $p \nmid m$. Sean $H, K \ge G$ de orden $p^n$. Entonces, $H$ y $K$ son conjugados.
-\end{theo}
+    \begin{theo}[Primer teorema de Sylow]
+        Sean $p$, primo, y $G$ cuyo orden es $\ord\left( G \right) := p^n m;\ m, n \in \mathbb{N}$ y $p \nmid m$. Sean $H, K \le G$ de orden $p^n$. Entonces, $H$ y $K$ son conjugados.
+    \end{theo}
 
-\begin{defi}
-Llamamos \textbf{$\mathbf{p}$-subgrupo de Sylow} a los subgrupos de $G$ de orden $p^n$.
-\end{defi}
+    \begin{defi}
+        Llamamos \textbf{$\mathbf{p}$-subgrupo de Sylow} a los subgrupos de $G$ de orden $p^n$.
+    \end{defi}
 
-\begin{coro}
-Sea $p$, nº primo, y $G$, finito, cuyo orden es $\ord\left( G \right) = p^n m; n, m \in \mathbb{N}$ y $p \nmid m$. Sea $H$ un $p$-subgrupo de Sylow de $G$.
-\begin{itemize}
-\item $H \triangleleft G \Leftrightarrow$ es el único $p$-subgrupo.
-\item Se cumple $N_G\left( N_G\left( H \right) \right) = N_G\left( H \right)$
-\end{itemize}
-\end{coro}
+    \begin{coro}
+        Sea $p$, primo, y $G$ cuyo orden es $\ord\left( G \right) = p^n m;\ n, m \in \mathbb{N}$ y $p \nmid m$. Sea $H$ un $p$-subgrupo de Sylow de $G$. Entonces:
+        \begin{itemize}
+        \item $H \triangleleft G \Leftrightarrow$ es el único $p$-subgrupo.
+        \item Se cumple $N_G\left( N_G\left( H \right) \right) = N_G\left( H \right)$
+        \end{itemize}
+    \end{coro}
 
-\begin{theo}[Segundo teorema de Sylow]
-\begin{itemize}
-\item Sea $G$, finito, tal que $\ord\left( G \right) := p^nm;\ p$, nº primo, y $n, m \in \mathbb{N}$ tales que $p \nmid m$. Entonces, si $i \in \mathbb{Z}: 0 \le i \le n - 1$ y $H_i \le G$ de orden $p^i$, $\exists H_{i+1} \le G$ de orden $p^{i+1}$ tal que $H_i \triangleleft H_{i+1}$.
+    \begin{theo}[Segundo teorema de Sylow]
+        \begin{itemize}
+        \item Sea $G$ tal que $\ord\left( G \right) := p^nm;\ p$, primo, y $n, m \in \mathbb{N}$ tales que $p \nmid m$. Entonces, si $\exists i \in \mathbb{Z}: 0 \le i \le n - 1$ y $H_i \le G$ de orden $p^i$, tendremos que $\exists H_{i+1} \le G$ de orden $p^{i+1}$ tal que $H_i \triangleleft H_{i+1}$.
 
-\item En particular, $\exists H_1, \ldots, H_{n} \le G$ de ordenes $p, p^2, \ldots, p^n$, tales que $H_i \triangleleft H_{i+1}$.
+        \item En particular, $\exists H_1, \ldots, H_{n} \le G$ de ordenes $p, p^2, \ldots, p^n$, tales que $H_i \triangleleft H_{i+1}$.
 
-\item $\forall H \le G$ de orden potencia de $p$ está contenido en alguno de los $p$-subgrupos de Sylow.
-\end{itemize}
-\end{theo}
+        \item $\forall H \le G$ de orden potencia de $p$ está contenido en alguno de los $p$-subgrupos de Sylow.
+        \end{itemize}
+    \end{theo}
 
-\begin{coro}
-Sean $p$, nº primo, $n \in \mathbb{N}$ y $G$ de orden $p^n$. Entonces, $\forall k = 0, \ldots, n,\ \exists H_k \triangleleft G$ de orden $p^k$.
-\end{coro}
+    \begin{coro}
+        Sean $p$, primo, $n \in \mathbb{N}$ y $G$ de orden $p^n$. Entonces, $\forall k = 0, \ldots, n,\ \exists H_k \triangleleft G$ de orden $p^k$.
+    \end{coro}
 
-\begin{theo}[Tercer teorema de Sylow]
-Sea $p$, nº primo, y $G$, finito, tal que $\ord \left( G \right) = p^nm;\ n, m \in \mathbb{N}$ y $p \nmid m$. Entonces, $n_p :=$ nº de $p$-subgrupos de Sylow cumple:
-\begin{itemize}
-    \item $n_p = \left[ G : N_G\left( H \right) \right],\ \forall H\ p$-subgrupo de $G$. 
-    \item $n_p$ divide a $m$ y $n_p - 1$ es múltiplo de $p$.
-\end{itemize}
-\end{theo}
+    \begin{theo}[Tercer teorema de Sylow]
+        Sea $p$, primo, y $G$ tal que $\ord \left( G \right) = p^nm;\ n, m \in \mathbb{N}$ y $p \nmid m$. Entonces, $n_p :=$ nº de $p$-subgrupos de Sylow cumple:
+        \begin{itemize}
+            \item $n_p = \left[ G : N_G\left( H \right) \right],\ \forall H\ p$-subgrupo de $G$. 
+            \item $n_p$ divide a $m$ y $n_p - 1$ es múltiplo de $p$.
+        \end{itemize}
+    \end{theo}
 
-\begin{coro}[Teorema de Wilson]
-$\forall p > 0$, primo, se cumple que $\left( p - 1 \right)! + 1 \in p \mathbb{Z}$.
-\end{coro}
+    \begin{coro}[Teorema de Wilson]
+        Tenemos que $\forall p > 0$, primo, se cumple que $\left( p - 1 \right)! + 1 \in p \mathbb{Z}$.
+    \end{coro}
